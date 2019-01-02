@@ -7,6 +7,20 @@
     "lint": "eslint src --fix && eslint tests --fix",
     "test": "node tests"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commitmsg": "commit stage",
+      "pre-push": "npm run test && npm version patch"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint",
+      "npm run test",
+      "git add"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/azmisahin/azmisahin-software-web-component-file-management-node.git"
@@ -25,6 +39,8 @@
   "homepage": "https://github.com/azmisahin/azmisahin-software-web-component-file-management-node#readme",
   "devDependencies": {
     "eslint": "^5.11.1",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.0",
     "test-management": "0.0.2"
   }
 }
