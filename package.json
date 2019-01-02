@@ -4,7 +4,8 @@
   "description": "Simple File Management",
   "main": "src/index.js",
   "scripts": {
-    "lint": "eslint src --fix && eslint tests --fix"
+    "lint": "eslint src --fix && eslint tests --fix",
+    "test": "node tests"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/azmisahin/azmisahin-software-web-component-file-management-node#readme",
   "devDependencies": {
-    "eslint": "^5.11.1"
+    "eslint": "^5.11.1",
+    "test-management": "0.0.2"
   }
 }
