@@ -17,7 +17,7 @@ $ npm i --save file-management
 
 ```js
 /// File Management Reference
-var FileManagement = require('file-management')
+var FileManagement = require('file-management-simple')
 
 /// Test object
 var fileManagement = new FileManagement()

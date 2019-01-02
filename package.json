@@ -1,5 +1,5 @@
 {
-  "name": "file-management",
+  "name": "file-management-simple",
   "version": "0.0.1",
   "description": "Simple File Management",
   "main": "src/index.js",
