@@ -1,0 +1,25 @@
+{
+  "name": "file-management",
+  "version": "0.0.1",
+  "description": "Simple File Management",
+  "main": "src/index.js",
+  "scripts": {
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azmisahin/azmisahin-software-web-component-file-management-node.git"
+  },
+  "keywords": [
+    "simple",
+    "file",
+    "management",
+    "reader"
+  ],
+  "author": "azmisahin@outlook.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azmisahin/azmisahin-software-web-component-file-management-node/issues"
+  },
+  "homepage": "https://github.com/azmisahin/azmisahin-software-web-component-file-management-node#readme"
+}
