@@ -1,6 +1,6 @@
 # file-management
 
-Simple File Management.
+Simple File Management. Reads text files.
 
 ## Install
 
@@ -20,25 +20,39 @@ $ npm i --save file-management
 var FileManagement = require('file-management-simple')
 
 /// Test Params
-var sampleFile = './tests/sample/test.txt'
+var Mock = {
+  File: './tests/sample/test.txt',
+  FileName: 'test.txt',
+  FileFolder: './tests/sample',
+  FileContent: 'Sample file content.\n'
+}
 
 /// Is the file foldeer defined resolved
 var folder = new FileManagement()
-            .setFile(sampleFile)
+            .setFile(Mock.File)
             .File
             .Folder
 
 /// Is the file name defined resolved
 var file = new FileManagement()
-          .setFile(sampleFile)
+          .setFile(Mock.File)
           .File
           .Name
 
-console.log(`Sample\t: ${sampleFile}`)
+/// Does the file return as string
+var content = (new FileManagement()
+              .setFile(Mock.File)
+              .File)
+              .ToString()
+
+console.log(`Sample\t: ${Mock.File}`)
 console.log(`Folder\t: ${folder}`)
 console.log(`File\t: ${file}`)
+console.log(`Content\t: ${content}`)
 
 ```
+
+## Try
 
 ```shell
 
@@ -47,7 +61,7 @@ $ node main
 Sample  : ./tests/sample/test.txt
 Folder  : ./tests/sample
 File    : test.txt
-
+Content : Sample file content.
 ```
 
 ## Test
@@ -55,7 +69,7 @@ File    : test.txt
 ```shell
 $ npm run test
 
-> node test
+> node tests
 
 Simple Test Tool
 ==================================================
@@ -69,6 +83,9 @@ Is the file Folder defined resolved?
 Success
 --------------------------------------------------
 Is the filename defined resolved?
+Success
+--------------------------------------------------
+Does the file return as string?
 Success
 --------------------------------------------------
 ```

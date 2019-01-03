@@ -11,7 +11,8 @@ var FileManagement = require('../src')
 var Mock = {
   File: './tests/sample/test.txt',
   FileName: 'test.txt',
-  FileFolder: './tests/sample'
+  FileFolder: './tests/sample',
+  FileContent: 'Sample file content.\n'
 }
 
 /// Instance Test
@@ -47,3 +48,11 @@ var isfileNameResolvedTest = function () {
   t.Test('Is the filename defined resolved?', expected, actual.File.Name)
 }
 isfileNameResolvedTest()
+
+/// Does the file return as string
+var isFileReturnStringTest = function () {
+  var expected = Mock.FileContent
+  var actual = new FileManagement().setFile(Mock.File)
+  t.Test('Does the file return as string?', expected, actual.File.ToString())
+}
+isFileReturnStringTest()

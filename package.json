@@ -29,7 +29,8 @@
     "simple",
     "file",
     "management",
-    "reader"
+    "reader",
+    "txt"
   ],
   "author": "azmisahin@outlook.com",
   "license": "MIT",

@@ -1,3 +1,7 @@
+/// Require referance
+require('./extensions')
+var path = require('path')
+
 /**
  * File
  *
@@ -13,8 +17,8 @@ class File {
    */
   constructor(location) {
 
-    /// Require referance
-    var path = require('path')
+    /// Base directory
+    this.BaseFolder = process.cwd()
 
     /// File Name
     this.Name = path.basename(location)
@@ -22,8 +26,38 @@ class File {
     /// Folder
     this.Folder = path.dirname(location)
 
+    /// File Full Path
+    this.FilePath = path.join(this.BaseFolder, this.Folder, this.Name)
+
     /// Return File
     return this
+  }
+
+  /**
+   * Open File
+   */
+  Open() {
+
+    /// File Content
+    this.Content = require(`${this.FilePath}`)
+
+    /// Return File
+    return this
+  }
+
+  /**
+   * File To String
+   */
+  ToString() {
+
+    /// Open File
+    this.Open()
+
+    /// Result string
+    var result = String(this.Content)
+
+    /// Return string
+    return result
   }
 }
 
