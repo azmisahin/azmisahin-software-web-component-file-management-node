@@ -1,6 +1,6 @@
 {
   "name": "file-management-simple",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simple File Management",
   "main": "src/index.js",
   "scripts": {
