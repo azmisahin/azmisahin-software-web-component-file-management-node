@@ -22,3 +22,6 @@ function readFileSync(module, filename) {
 
 /// Require extensions ['.txt']
 require.extensions['.txt'] = readFileSync
+
+/// Require extensions ['.json']
+require.extensions['.json'] = readFileSync

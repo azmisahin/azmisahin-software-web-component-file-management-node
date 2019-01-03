@@ -1,6 +1,6 @@
 # file-management
 
-Simple File Management. Reads text files.
+Simple File Management. Reads text and json files.
 
 ## Install
 
@@ -19,12 +19,22 @@ $ npm i --save file-management
 /// File Management Reference
 var FileManagement = require('file-management-simple')
 
-/// Test Params
+/// Test Params For Txt
 var Mock = {
   File: './tests/sample/test.txt',
   FileName: 'test.txt',
   FileFolder: './tests/sample',
   FileContent: 'Sample file content.\n'
+}
+
+/// Test Params For Json
+var MockJson = {
+  File: './tests/sample/test.json',
+  FileName: 'test.json',
+  FileFolder: './tests/sample',
+  FileContent: {
+    'value': 'Sample file content.'
+  }
 }
 
 /// Is the file foldeer defined resolved
@@ -45,10 +55,22 @@ var content = (new FileManagement()
               .File)
               .ToString()
 
+/// Does the file return as json
+var jsContent = (new FileManagement()
+                .setFile(MockJson.File)
+                .File)
+                .ToJson()
+                .value
+
+console.log(`-----------------------------------------------txt`)
 console.log(`Sample\t: ${Mock.File}`)
 console.log(`Folder\t: ${folder}`)
 console.log(`File\t: ${file}`)
 console.log(`Content\t: ${content}`)
+
+console.log(`------------------------------------------------js`)
+console.log(`Sample\t: ${MockJson.File}`)
+console.log(`Content\t: ${jsContent}`)
 
 ```
 
@@ -88,6 +110,10 @@ Success
 Does the file return as string?
 Success
 --------------------------------------------------
+Does the file return as json?
+Success
+--------------------------------------------------
+
 ```
 
 ## Pipeline

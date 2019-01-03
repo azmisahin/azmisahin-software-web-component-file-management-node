@@ -59,6 +59,21 @@ class File {
     /// Return string
     return result
   }
+
+  /**
+   * File To Json
+   */
+  ToJson() {
+
+    /// Open File
+    this.Open()
+
+    /// Result json
+    var result = JSON.parse(this.Content)
+
+    /// Return string
+    return result
+  }
 }
 
 module.exports = File

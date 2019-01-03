@@ -7,12 +7,22 @@ var t = new TestManager(true)
 /// Test Referance
 var FileManagement = require('../src')
 
-/// Test Params
+/// Test Params For Txt
 var Mock = {
   File: './tests/sample/test.txt',
   FileName: 'test.txt',
   FileFolder: './tests/sample',
   FileContent: 'Sample file content.\n'
+}
+
+/// Test Params For Json
+var MockJson = {
+  File: './tests/sample/test.json',
+  FileName: 'test.json',
+  FileFolder: './tests/sample',
+  FileContent: {
+    'value': 'Sample file content.'
+  }
 }
 
 /// Instance Test
@@ -56,3 +66,11 @@ var isFileReturnStringTest = function () {
   t.Test('Does the file return as string?', expected, actual.File.ToString())
 }
 isFileReturnStringTest()
+
+/// Does the file return as json
+var isFileReturnJsonTest = function () {
+  var expected = MockJson.FileContent
+  var actual = new FileManagement().setFile(MockJson.File)
+  t.Test('Does the file return as json?', expected.value, actual.File.ToJson().value)
+}
+isFileReturnJsonTest()
