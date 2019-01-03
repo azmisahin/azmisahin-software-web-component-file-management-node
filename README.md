@@ -19,19 +19,24 @@ $ npm i --save file-management
 /// File Management Reference
 var FileManagement = require('file-management-simple')
 
-/// Test object
-var fileManagement = new FileManagement()
+/// Test Params
+var sampleFile = './tests/sample/test.txt'
 
-/// Test Result
-var result = {
-  /// Expected test result
-  expected : 'file-management',
-  /// Actual test result
-  actual : fileManagement.name
-}
+/// Is the file foldeer defined resolved
+var folder = new FileManagement()
+            .setFile(sampleFile)
+            .File
+            .Folder
 
-// Test output
-console.log(result)
+/// Is the file name defined resolved
+var file = new FileManagement()
+          .setFile(sampleFile)
+          .File
+          .Name
+
+console.log(`Sample\t: ${sampleFile}`)
+console.log(`Folder\t: ${folder}`)
+console.log(`File\t: ${file}`)
 
 ```
 
@@ -39,7 +44,9 @@ console.log(result)
 
 $ node main
 
-{ expected: 'file-management', actual: 'file-management' }
+Sample  : ./tests/sample/test.txt
+Folder  : ./tests/sample
+File    : test.txt
 
 ```
 
@@ -56,6 +63,12 @@ Instance constractor is ok?
 Success
 --------------------------------------------------
 is there Incrementing semantic versions?
+Success
+--------------------------------------------------
+Is the file Folder defined resolved?
+Success
+--------------------------------------------------
+Is the filename defined resolved?
 Success
 --------------------------------------------------
 ```
