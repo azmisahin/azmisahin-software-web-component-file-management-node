@@ -1,5 +1,5 @@
 /// Require referance
-require('./extensions')
+var ReadFileSync = require('./extensions')
 var path = require('path')
 
 /**
@@ -39,7 +39,7 @@ class File {
   Open() {
 
     /// File Content
-    this.Content = require(`${this.FilePath}`)
+    this.Content = ReadFileSync(`${this.FilePath}`)
 
     /// Return File
     return this

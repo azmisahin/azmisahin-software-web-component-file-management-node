@@ -1,27 +1,32 @@
-// File Stream
-var fs = require('fs')
-
-/// Read File Sync
-function readFileSync(module, filename) {
-
-  // Content
-  var content = fs.readFileSync(filename, 'utf8')
-
-  // Export Content
+/**
+ * Read a File Sync
+ * 
+ * @param {string} filename File Name
+ * 
+ * @returns UTF8 File Content
+ */ 
+function readFileSync (filename) {
+  
+  /// File Content
+  var result = undefined 
+  
   try {
 
-    // Exports
-    module.exports = content
-  } catch (err) {
+    // Define file stream
+    var fs = require('fs')
 
-    // Error
-    err.message = filename + ': ' + err.message
-    throw err
-  }
+    // Read file content 
+    result = fs.readFileSync(filename, 'utf8')
+    
+  } catch (error) {
+
+    // Error handler
+    throw `File not reading...\n${error}`
+  } 
+  
+  /// Result String
+  return result
 }
 
-/// Require extensions ['.txt']
-require.extensions['.txt'] = readFileSync
-
-/// Require extensions ['.json']
-require.extensions['.json'] = readFileSync
+/// ReadFileSync
+module.exports = readFileSync

@@ -12,7 +12,7 @@ var Mock = {
   File: './tests/sample/test.txt',
   FileName: 'test.txt',
   FileFolder: './tests/sample',
-  FileContent: 'Sample file content.\n'
+  FileContent: 'Sample file content.'
 }
 
 /// Test Params For Json
