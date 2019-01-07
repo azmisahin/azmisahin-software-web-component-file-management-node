@@ -54,7 +54,7 @@ class File {
     this.Open()
 
     /// Result string
-    var result = String(this.Content)
+    var result = JSON.stringify(this.Content)
 
     /// Return string
     return result
@@ -69,7 +69,7 @@ class File {
     this.Open()
 
     /// Result json
-    var result = JSON.parse(this.Content)
+    var result = this.Content
 
     /// Return string
     return result

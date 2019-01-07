@@ -7,14 +7,6 @@ var t = new TestManager(true)
 /// Test Referance
 var FileManagement = require('../src')
 
-/// Test Params For Txt
-var Mock = {
-  File: './tests/sample/test.txt',
-  FileName: 'test.txt',
-  FileFolder: './tests/sample',
-  FileContent: 'Sample file content.'
-}
-
 /// Test Params For Json
 var MockJson = {
   File: './tests/sample/test.json',
@@ -45,27 +37,19 @@ isIncrementingVersionsTest()
 
 /// Is the file foldeer defined resolved
 var isFileFolderResolvedTest = function () {
-  var expected = Mock.FileFolder
-  var actual = new FileManagement().setFile(Mock.File)
+  var expected = MockJson.FileFolder
+  var actual = new FileManagement().setFile(MockJson.File)
   t.Test('Is the file Folder defined resolved?', expected, actual.File.Folder)
 }
 isFileFolderResolvedTest()
 
 /// Is the file name defined resolved
 var isfileNameResolvedTest = function () {
-  var expected = Mock.FileName
-  var actual = new FileManagement().setFile(Mock.File)
+  var expected = MockJson.FileName
+  var actual = new FileManagement().setFile(MockJson.File)
   t.Test('Is the filename defined resolved?', expected, actual.File.Name)
 }
 isfileNameResolvedTest()
-
-/// Does the file return as string
-var isFileReturnStringTest = function () {
-  var expected = Mock.FileContent
-  var actual = new FileManagement().setFile(Mock.File)
-  t.Test('Does the file return as string?', expected, actual.File.ToString())
-}
-isFileReturnStringTest()
 
 /// Does the file return as json
 var isFileReturnJsonTest = function () {
